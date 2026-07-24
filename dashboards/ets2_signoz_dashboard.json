@@ -1,0 +1,205 @@
+{
+  "title": "ETS2 Live Telemetry",
+  "description": "Real-time dashboard for Euro Truck Simulator 2",
+  "tags": ["gaming", "ets2"],
+  "variables": {},
+  "widgets": [
+    {
+      "id": "speed_widget",
+      "title": "Truck Speed (km/h)",
+      "description": "",
+      "panelTypes": ["time_series"],
+      "query": {
+        "queryType": "builder",
+        "builder": {
+          "queryData": [
+            {
+              "dataSource": "metrics",
+              "queryName": "A",
+              "aggregateOperator": "avg",
+              "aggregateAttribute": {
+                "key": "ets2_truck_speed",
+                "dataType": "float64",
+                "type": "Gauge",
+                "isColumn": false,
+                "isJSON": false
+              },
+              "timeAggregation": "timeSeries",
+              "spaceAggregation": "avg",
+              "functions": [],
+              "filters": {
+                "items": [],
+                "op": "AND"
+              },
+              "expression": "A",
+              "disabled": false,
+              "stepInterval": 60,
+              "legend": "Speed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rpm_widget",
+      "title": "Engine RPM",
+      "description": "",
+      "panelTypes": ["time_series"],
+      "query": {
+        "queryType": "builder",
+        "builder": {
+          "queryData": [
+            {
+              "dataSource": "metrics",
+              "queryName": "A",
+              "aggregateOperator": "avg",
+              "aggregateAttribute": {
+                "key": "ets2_truck_engine_rpm",
+                "dataType": "float64",
+                "type": "Gauge",
+                "isColumn": false,
+                "isJSON": false
+              },
+              "timeAggregation": "timeSeries",
+              "spaceAggregation": "avg",
+              "functions": [],
+              "filters": {
+                "items": [],
+                "op": "AND"
+              },
+              "expression": "A",
+              "disabled": false,
+              "stepInterval": 60,
+              "legend": "RPM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fuel_widget",
+      "title": "Fuel Level (Liters)",
+      "description": "",
+      "panelTypes": ["time_series"],
+      "query": {
+        "queryType": "builder",
+        "builder": {
+          "queryData": [
+            {
+              "dataSource": "metrics",
+              "queryName": "A",
+              "aggregateOperator": "avg",
+              "aggregateAttribute": {
+                "key": "ets2_truck_fuel_amount",
+                "dataType": "float64",
+                "type": "Gauge",
+                "isColumn": false,
+                "isJSON": false
+              },
+              "timeAggregation": "timeSeries",
+              "spaceAggregation": "avg",
+              "functions": [],
+              "filters": {
+                "items": [],
+                "op": "AND"
+              },
+              "expression": "A",
+              "disabled": false,
+              "stepInterval": 60,
+              "legend": "Fuel"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wear_widget",
+      "title": "Damage & Wear (%)",
+      "description": "",
+      "panelTypes": ["time_series"],
+      "query": {
+        "queryType": "builder",
+        "builder": {
+          "queryData": [
+            {
+              "dataSource": "metrics",
+              "queryName": "A",
+              "aggregateOperator": "avg",
+              "aggregateAttribute": {
+                "key": "ets2_truck_wear_engine",
+                "dataType": "float64",
+                "type": "Gauge",
+                "isColumn": false,
+                "isJSON": false
+              },
+              "timeAggregation": "timeSeries",
+              "spaceAggregation": "avg",
+              "functions": [],
+              "filters": {
+                "items": [],
+                "op": "AND"
+              },
+              "expression": "A",
+              "disabled": false,
+              "stepInterval": 60,
+              "legend": "Engine Wear"
+            },
+            {
+              "dataSource": "metrics",
+              "queryName": "B",
+              "aggregateOperator": "avg",
+              "aggregateAttribute": {
+                "key": "ets2_truck_wear_transmission",
+                "dataType": "float64",
+                "type": "Gauge",
+                "isColumn": false,
+                "isJSON": false
+              },
+              "timeAggregation": "timeSeries",
+              "spaceAggregation": "avg",
+              "functions": [],
+              "filters": {
+                "items": [],
+                "op": "AND"
+              },
+              "expression": "B",
+              "disabled": false,
+              "stepInterval": 60,
+              "legend": "Transmission Wear"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "layout": [
+    {
+      "w": 6,
+      "h": 3,
+      "x": 0,
+      "y": 0,
+      "i": "speed_widget"
+    },
+    {
+      "w": 6,
+      "h": 3,
+      "x": 6,
+      "y": 0,
+      "i": "rpm_widget"
+    },
+    {
+      "w": 6,
+      "h": 3,
+      "x": 0,
+      "y": 3,
+      "i": "fuel_widget"
+    },
+    {
+      "w": 6,
+      "h": 3,
+      "x": 6,
+      "y": 3,
+      "i": "wear_widget"
+    }
+  ]
+}

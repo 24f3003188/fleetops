@@ -1,0 +1,10 @@
+apiVersion: v1alpha1
+kind: Installation
+metadata:
+  name: fleetops-signoz
+spec:
+  deployment:
+    mode: docker
+    flavor: compose
+  mcp:
+    enabled: true
