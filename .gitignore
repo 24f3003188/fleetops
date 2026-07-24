@@ -37,6 +37,3 @@ venv.bak/
 *.swp
 *.swo
 
-# SigNoz Foundry local state (if applicable)
-# We keep casting.yaml and casting.yaml.lock but maybe ignore some tmp dirs
-pours/deployment/tmp/

@@ -81,7 +81,12 @@ curl -sL https://signoz.io/install.sh | bash
 # 2. Deploy the SigNoz stack using our custom configuration
 foundryctl cast -f casting.yaml
 ```
-*(Note: `mcp: enabled: true` is explicitly configured in `casting.yaml` to ensure the OTel Ingester receives its pipeline configuration correctly).*
+
+> **Fallback:** If `foundryctl` fails to install or execute on your host, we have pre-rendered the guaranteed-working deployment files in this repository! You can simply run:
+> ```bash
+> cd pours/deployment
+> docker compose up -d
+> ```
 
 ### 3. Start the ETS2 Telemetry Server
 Before running the daemon, you must start the telemetry server bridge.
