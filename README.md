@@ -133,6 +133,10 @@ ORDER BY timestamp DESC
 LIMIT 10
 ```
 
+> **Interesting Data Quirks:**
+> *   **Negative Fuel Used:** If you see a negative number for `Fuel Used`, it means the driver stopped to refuel the truck mid-delivery! The final tank level was higher than the starting tank level.
+> *   **Massive Wasted Mileage:** Wasted mileage is calculated precisely via the truck's odometer (`actual distance driven - planned route distance`). If a driver misses an exit, gets horribly lost, or takes a joyride to the wrong city, the Wasted KM can easily be magnitudes higher than the original delivery distance!
+
 ---
 
 ## Screenshots & Demos
@@ -180,4 +184,4 @@ A massive thank you to **SCS Software** for providing the underlying telemetry S
 ---
 
 ## License
-This project is submitted for the SigNoz Hackathon. Licensed under the MIT License.
+This project is submitted for the SigNoz Hackathon.
